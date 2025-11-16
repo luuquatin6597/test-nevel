@@ -42,19 +42,38 @@ jobs:
         run: pnpm install
 
       - name: Build with Next.js
-        run: |
-          pnpm build
-          echo "Build completed, checking output..."
-          ls -la
-          if [ -d "out" ]; then
-            echo "✓ out directory exists"
-            ls -la out/
-          else
-            echo "✗ out directory NOT found, checking .next..."
-            ls -la .next/ || echo ".next not found either"
-          fi
+        run: pnpm build
         env:
           NODE_ENV: production
+
+      - name: Export static files
+        run: |
+          echo "Looking for static export..."
+          ls -la .next/
+
+          # Check if standalone output exists
+          if [ -d ".next/standalone" ]; then
+            echo "Using standalone output"
+            mkdir -p out
+            cp -r .next/standalone/* out/
+            cp -r .next/static out/_next/static
+            cp -r public/* out/
+          # Check if server app output exists  
+          elif [ -d ".next/server/pages" ]; then
+            echo "Copying from .next/server/pages"
+            mkdir -p out
+            cp -r .next/server/pages/* out/
+            cp -r .next/static out/_next/static
+            cp -r public/* out/
+          else
+            echo "ERROR: Cannot find static export output!"
+            echo "Contents of .next/server:"
+            ls -la .next/server/ || true
+            exit 1
+          fi
+
+          echo "Final out directory:"
+          ls -la out/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
