@@ -42,16 +42,19 @@ jobs:
         run: pnpm install
 
       - name: Build with Next.js
-        run: pnpm build
+        run: |
+          pnpm build
+          echo "Build completed, checking output..."
+          ls -la
+          if [ -d "out" ]; then
+            echo "✓ out directory exists"
+            ls -la out/
+          else
+            echo "✗ out directory NOT found, checking .next..."
+            ls -la .next/ || echo ".next not found either"
+          fi
         env:
           NODE_ENV: production
-
-      - name: Debug - List files
-        run: |
-          echo "Listing root directory:"
-          ls -la
-          echo "Checking if out directory exists:"
-          ls -la out/ || echo "out directory does not exist"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
