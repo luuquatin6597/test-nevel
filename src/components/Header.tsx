@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Button from "./ui/Button";
 import { IconDown } from "./icons/IconDown";
+import { getAssetPath } from "@/lib/utils";
 
 const menuItems = [
   { href: "/", label: "HOME" },
@@ -67,14 +68,14 @@ export default function Header() {
           <div className="flex items-center gap-12">
             <Image
               className="lg:hidden"
-              src="/logo/logo.svg"
+              src={getAssetPath("/logo/logo.svg")}
               alt="Logo"
               width={38}
               height={40}
             />
             <Image
               className="hidden lg:flex"
-              src="/logo/logo-text.svg"
+              src={getAssetPath("/logo/logo-text.svg")}
               alt="Logo"
               width={138}
               height={40}

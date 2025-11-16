@@ -24,11 +24,11 @@ export default function Footer() {
   };
 
   const paymentMethods = [
-    { title: "Visa", icon: "/payments/visa.svg" },
-    { title: "Mastercard", icon: "/payments/mastercard.svg" },
-    { title: "AstroPay", icon: "/payments/astro-pay.svg" },
-    { title: "Interac", icon: "/payments/interac.svg" },
-    { title: "JetonBank", icon: "/payments/jetonbank.svg" },
+    { title: "Visa", icon: getAssetPath("/payments/visa.svg") },
+    { title: "Mastercard", icon: getAssetPath("/payments/mastercard.svg") },
+    { title: "AstroPay", icon: getAssetPath("/payments/astro-pay.svg") },
+    { title: "Interac", icon: getAssetPath("/payments/interac.svg") },
+    { title: "JetonBank", icon: getAssetPath("/payments/jetonbank.svg") },
   ];
 
   return (
