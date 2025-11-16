@@ -84,9 +84,9 @@ export default function Header() {
 
           {/* Navigation - Hidden on mobile */}
           <nav className="hidden lg:flex items-center">
-            {menuItems.map((item) => (
+            {menuItems.map((item, index) => (
               <Link
-                key={item.href}
+                key={index}
                 href={item.href}
                 title={item.label}
                 className={`px-20 py-10 text-14 leading-20 rounded-full transition-colors ${
@@ -122,9 +122,9 @@ export default function Header() {
         }`}
       >
         <nav className="flex flex-col items-center p-20 gap-16">
-          {menuItems.map((item) => (
+          {menuItems.map((item, index) => (
             <Link
-              key={item.href}
+              key={index}
               href={item.href}
               title={item.label}
               onClick={toggleMenu}

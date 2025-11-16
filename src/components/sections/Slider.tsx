@@ -60,7 +60,7 @@ export default function Slider({
     <section className="relative w-full overflow-hidden">
       {/* Content */}
       <div className="relative">
-        <div className="absolute w-100 px-24 z-1 left-1/2 -translate-x-1/2 top-[22px] lg:top-11">
+        <div className="absolute w-full px-24 z-1 left-1/2 -translate-x-1/2 top-[22px] lg:top-11">
           {/* Title */}
           <h1
             key={`title-${currentSlide}`}
