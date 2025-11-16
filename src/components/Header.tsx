@@ -48,17 +48,17 @@ export default function Header() {
             onClick={toggleMenu}
           >
             <span
-              className={`w-24 h-[3px] rounded-xl bg-neutral-invert-accent transition-all ${
+              className={`w-24 h-[3px] rounded-xl bg-bg-neutral-invert-accent transition-all ${
                 isMenuOpen ? "rotate-45 translate-x-0 translate-y-[7px]" : ""
               }`}
             ></span>
             <span
-              className={`w-24 h-[3px] rounded-xl bg-neutral-invert-accent transition-all ${
+              className={`w-24 h-[3px] rounded-xl bg-bg-neutral-invert-accent transition-all ${
                 isMenuOpen ? "-rotate-45 translate-x-0 -translate-y-px" : ""
               }`}
             ></span>
             <span
-              className={`w-16 h-[3px] rounded-xl bg-neutral-invert-accent transition-all ${
+              className={`w-16 h-[3px] rounded-xl bg-bg-neutral-invert-accent transition-all ${
                 isMenuOpen ? "opacity-0" : ""
               }`}
             ></span>
