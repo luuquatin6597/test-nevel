@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { formatNumber, formatCurrency } from "@/utils/format";
 import { Product } from "@/types/product";
-import { getAssetPath } from "@/lib/utils";
 
 interface TableColumnProps {
   index: number;
@@ -51,7 +50,7 @@ export default function TableColumn({
         <div className="w-20 h-20 lg:w-40 lg:h-40 flex items-center justify-center">
           {index < 3 ? (
             <Image
-              src={getAssetPath(`/images/top-selling-${index + 1}.png`)}
+              src={`/images/top-selling-${index + 1}.png`}
               alt={product.name ?? "Product"}
               width={40}
               height={40}

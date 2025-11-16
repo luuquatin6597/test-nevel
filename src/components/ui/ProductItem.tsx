@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { Product } from "@/types/product";
-import { getAssetPath } from "@/lib/utils";
+import type { Product } from "@/types/product";
 
 export default function ProductItem({ product }: { product: Product }) {
   return (
@@ -8,7 +7,7 @@ export default function ProductItem({ product }: { product: Product }) {
       <div className="overflow-hidden rounded-xl cursor-pointer">
         {/* Product Image */}
         <Image
-          src={getAssetPath(product.image ?? "/images/placeholder.png")}
+          src={product.image ?? "/images/placeholder.png"}
           alt={product.name || "Product"}
           width={180}
           height={245}

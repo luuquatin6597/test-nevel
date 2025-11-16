@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getAssetPath } from "@/lib/utils";
 import Title from "../ui/Title";
 import Image from "next/image";
 // dot indicators only — left/right icons removed from this component
@@ -49,7 +48,7 @@ export function BannerSection({
         // Small type: chỉ hiển thị banner đầu tiên
         <div className="overflow-hidden rounded-lg flex-1 relative min-h-60 cursor-pointer">
           <Image
-            src={getAssetPath(images[0])}
+            src={images[0]}
             fill
             priority
             sizes="(max-width: 1024px) 240px, 240px"
@@ -75,7 +74,7 @@ export function BannerSection({
                   }`}
                 >
                   <Image
-                    src={getAssetPath(image)}
+                    src={image}
                     fill
                     loading={active ? "eager" : "lazy"}
                     priority={active && idx === 0}

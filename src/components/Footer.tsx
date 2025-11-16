@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { getAssetPath } from "@/lib/utils";
 
 export default function Footer() {
   const footerLinks = {
@@ -24,11 +23,11 @@ export default function Footer() {
   };
 
   const paymentMethods = [
-    { title: "Visa", icon: getAssetPath("/payments/visa.svg") },
-    { title: "Mastercard", icon: getAssetPath("/payments/mastercard.svg") },
-    { title: "AstroPay", icon: getAssetPath("/payments/astro-pay.svg") },
-    { title: "Interac", icon: getAssetPath("/payments/interac.svg") },
-    { title: "JetonBank", icon: getAssetPath("/payments/jetonbank.svg") },
+    { title: "Visa", icon: "/payments/visa.svg" },
+    { title: "Mastercard", icon: "/payments/mastercard.svg" },
+    { title: "AstroPay", icon: "/payments/astro-pay.svg" },
+    { title: "Interac", icon: "/payments/interac.svg" },
+    { title: "JetonBank", icon: "/payments/jetonbank.svg" },
   ];
 
   return (
@@ -113,7 +112,7 @@ export default function Footer() {
               </a>
               <button className="mt-24">
                 <Image
-                  src={getAssetPath("/images/install-app.png")}
+                  src="/images/install-app.png"
                   alt="Phone"
                   width={151.4}
                   height={44}
@@ -126,7 +125,7 @@ export default function Footer() {
         {/* Warranty Section */}
         <div className="flex items-center flex-col lg:flex-row gap-12 lg:gap-20 mb-20 lg:mb-40">
           <Image
-            src={getAssetPath("/images/footer-secure.png")}
+            src="/images/footer-secure.png"
             alt="Secure"
             width={131}
             height={30}
