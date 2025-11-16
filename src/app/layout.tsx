@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import WelcomeModal from "@/components/modals/WelcomeModal";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["900"], // Black weight
+  style: ["italic"],
 });
 
 export const metadata: Metadata = {
@@ -24,10 +24,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${inter.variable} antialiased overflow-x-hidden`}>
+        {/* Header */}
+        <Header />
+
+        {/* Main content */}
+        <main className="animate-fade-in flex min-h-screen flex-col bg-background font-sans">
+          {children}
+        </main>
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Welcome Modal */}
+        <WelcomeModal />
       </body>
     </html>
   );
