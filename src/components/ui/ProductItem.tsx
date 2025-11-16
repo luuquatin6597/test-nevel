@@ -5,7 +5,7 @@ import { getAssetPath } from "@/lib/utils";
 export default function ProductItem({ product }: { product: Product }) {
   return (
     <div className="shrink-0">
-      <div className="overflow-hidden rounded-xl">
+      <div className="overflow-hidden rounded-xl cursor-pointer">
         {/* Product Image */}
         <Image
           src={getAssetPath(product.image ?? "/images/placeholder.png")}

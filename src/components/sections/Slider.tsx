@@ -60,11 +60,11 @@ export default function Slider({
     <section className="relative w-full overflow-hidden">
       {/* Content */}
       <div className="relative">
-        <div className="absolute w-full px-24 z-1 left-1/2 -translate-x-1/2 top-[22px] lg:top-11">
+        <div className="absolute w-full px-24 z-1 left-1/2 -translate-x-1/2 top-[22px] md:top-11">
           {/* Title */}
           <h1
             key={`title-${currentSlide}`}
-            className="text-24 lg:text-[48px] font-bold text-center mb-[7px] uppercase tracking-wider animate-fade-in bg-linear-to-r from-[#FFFFFF] via-[#FFD3E3] to-[#FFEA9F] bg-clip-text text-transparent"
+            className="text-24 md:text-[48px] font-bold text-center mb-[7px] uppercase tracking-wider animate-fade-in bg-linear-to-r from-[#FFFFFF] via-[#FFD3E3] to-[#FFEA9F] bg-clip-text text-transparent"
           >
             {currentItem.title}
           </h1>
@@ -72,7 +72,7 @@ export default function Slider({
           {/* Subtitle */}
           <p
             key={`subtitle-${currentSlide}`}
-            className="text-16 leading-24 lg:text-h2 lg:leading-h2 text-neutral-accent text-center animate-fade-in-delay"
+            className="text-16 leading-24 md:text-h2 md:leading-h2 text-neutral-accent text-center animate-fade-in-delay"
           >
             {currentItem.subtitle}
           </p>
@@ -86,7 +86,7 @@ export default function Slider({
             alt={`${currentItem.title}`}
             width={1600}
             height={642}
-            className="w-full h-auto object-cover animate-fade-in-image hidden lg:block"
+            className="w-full h-auto object-cover animate-fade-in-image hidden md:block"
             loading={currentSlide === currentSlide ? "eager" : "lazy"}
             priority={currentSlide === 0}
           />
@@ -97,7 +97,7 @@ export default function Slider({
               alt={`${currentItem.title} Mobile`}
               width={600}
               height={642}
-              className="w-full h-auto object-cover animate-fade-in-image lg:hidden"
+              className="w-full h-auto object-cover animate-fade-in-image md:hidden"
               loading={currentSlide === currentSlide ? "eager" : "lazy"}
               priority={currentSlide === 0}
             />
@@ -113,7 +113,7 @@ export default function Slider({
             className="absolute left-16 top-1/2 -translate-y-1/2 z-2 w-32 h-32 rounded-full bg-neutral-800/50 hover:bg-neutral-700/70 flex items-center justify-center transition-all backdrop-blur-sm"
             aria-label="Previous slide"
           >
-            <IconLeft className="w-24 h-24 text-neutral-0" />
+            <IconLeft />
           </button>
 
           <button
@@ -121,18 +121,18 @@ export default function Slider({
             className="absolute right-16 top-1/2 -translate-y-1/2 z-2 w-32 h-32 rounded-full bg-neutral-800/50 hover:bg-neutral-700/70 flex items-center justify-center transition-all backdrop-blur-sm"
             aria-label="Next slide"
           >
-            <IconRight className="w-24 h-24 text-neutral-0 rotate-180" />
+            <IconRight />
           </button>
 
-          <div className="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex gap-1">
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-1">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-10 h-10 rounded-full transition-all ${
+                className={`w-6 h-6 rounded-full transition-all ${
                   index === currentSlide
-                    ? "bg-neutral-100 w-32"
-                    : "bg-neutral-600 hover:bg-neutral-400"
+                    ? "bg-neutral-100 w-20"
+                    : "bg-neutral-400 hover:bg-neutral-300"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

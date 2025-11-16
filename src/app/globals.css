@@ -106,15 +106,15 @@
   --color-bg-neutral-normal: var(--neutral-800);
   --color-bg-neutral-accent: var(--secondary-900);
 
-  --color-bg-neutral-invert-subdued: rgb(from var(--neutral-0) r g b / 0.4);
-  --color-bg-neutral-invert-normal: rgb(from var(--neutral-0) r g b / 0.6);
-  --color-bg-neutral-invert-accent: rgb(from var(--neutral-0) r g b / 0.8);
+  --color-bg-neutral-invert-subdued: rgba(255, 255, 255, 0.4);
+  --color-bg-neutral-invert-normal: rgba(255, 255, 255, 0.6);
+  --color-bg-neutral-invert-accent: rgba(255, 255, 255, 0.8);
   
   --color-bg-primary-subdued: var(--primary-100);
   --color-bg-primary-normal: var(--primary-500);
   --color-bg-primary-accent: var(--primary-600);
 
-  --color-bg-modal-backdrop: rgb(from var(--secondary-900) r g b / 0.8);
+  --color-bg-modal-backdrop: rgba(19, 20, 21, 0.8);
   
   /* Primary Colors */
   --color-primary: var(--primary-500);

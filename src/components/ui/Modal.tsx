@@ -60,7 +60,7 @@ export default function Modal({
       onClick={onClose}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-bg-modal-backdrop backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-bg-modal-backdrop backdrop-blur-[10px]" />
 
       {/* Modal Content */}
       <div
