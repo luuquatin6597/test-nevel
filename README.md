@@ -199,15 +199,47 @@ pnpm start
   - Multi-column layouts
   - Grid-based product displays
 
+## 🚀 Deployment
+
+### Deploy to GitHub Pages
+
+This project is configured with GitHub Actions for automatic deployment to GitHub Pages.
+
+#### Setup Steps:
+
+1. **Enable GitHub Pages**:
+
+   - Go to your repository on GitHub
+   - Navigate to Settings → Pages
+   - Under "Build and deployment", select:
+     - Source: **GitHub Actions**
+
+2. **Push to main branch**:
+
+   ```bash
+   git add .
+   git commit -m "Deploy to GitHub Pages"
+   git push origin main
+   ```
+
+3. **Wait for deployment**:
+   - GitHub Actions will automatically build and deploy
+   - Check the "Actions" tab to monitor progress
+   - Once complete, your site will be live at: `https://luuquatin6597.github.io/test-nevel/`
+
+#### Manual Deployment:
+
+You can also trigger deployment manually from the "Actions" tab by running the workflow.
+
+### Deploy on Vercel
+
+Alternatively, you can deploy to [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme):
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
