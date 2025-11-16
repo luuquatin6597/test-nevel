@@ -9,10 +9,11 @@ export default function ProductItem({ product }: { product: Product }) {
         {/* Product Image */}
         <Image
           src={getAssetPath(product.image ?? "/images/placeholder.png")}
-          alt={`Product`}
+          alt={product.name || "Product"}
           width={180}
           height={245}
           loading="lazy"
+          sizes="(max-width: 1024px) 103px, 180px"
           className="object-cover max-w-[103px] lg:max-w-[180px] max-h-[140px] lg:max-h-[245px]"
         />
       </div>

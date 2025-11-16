@@ -1,6 +1,6 @@
 "use client";
 
-import { lazy, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getAssetPath } from "@/lib/utils";
 import Title from "../ui/Title";
 import Image from "next/image";
@@ -51,7 +51,8 @@ export function BannerSection({
           <Image
             src={getAssetPath(images[0])}
             fill
-            loading="lazy"
+            priority
+            sizes="(max-width: 1024px) 240px, 240px"
             alt={`Banner`}
             className="object-cover transition-transform duration-300 hover:scale-105 rounded-xl"
           />
@@ -61,7 +62,6 @@ export function BannerSection({
         <div
           className={`relative overflow-hidden rounded-lg ${className || ""}`}
         >
-          {/* fade slides: each slide is absolutely positioned and we animate opacity */}
           <div className="w-full aspect-video lg:aspect-auto lg:min-h-60 relative">
             {images.map((image, idx) => {
               const active = idx === index;
@@ -77,7 +77,9 @@ export function BannerSection({
                   <Image
                     src={getAssetPath(image)}
                     fill
-                    loading="lazy"
+                    loading={active ? "eager" : "lazy"}
+                    priority={active && idx === 0}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
                     alt={`Banner ${idx + 1}`}
                     className="object-cover transition-transform duration-300 hover:scale-105 rounded-xl"
                   />

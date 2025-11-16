@@ -52,6 +52,8 @@ jobs:
         run: NODE_ENV=production pnpm build
         env:
           NEXT_DISABLE_TURBOPACK: "1"
+          GITHUB_ACTIONS: "true"
+          DEPLOY_TARGET: "github-pages"
 
       - name: Verify build output
         run: |
