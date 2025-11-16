@@ -1,10 +1,13 @@
 /**
  * Get asset path with basePath prefix for GitHub Pages
- * In development, basePath is empty
- * In production, it's set via next.config.ts
+ * basePath is handled by Next.js for <Link>, but NOT for <Image> in static export
+ * So we need to manually add it
  */
 export function getAssetPath(path: string): string {
-  // The basePath from next.config.ts is automatically handled by Next.js
-  // We just return the path as-is
-  return path;
+  const basePath = "/test-nevel";
+  // Don't add basePath if it's already there
+  if (path.startsWith(basePath)) {
+    return path;
+  }
+  return `${basePath}${path}`;
 }
