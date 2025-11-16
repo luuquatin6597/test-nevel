@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { getAssetPath } from "@/lib/utils";
 import Title from "../ui/Title";
 import Image from "next/image";
@@ -51,6 +51,7 @@ export function BannerSection({
           <Image
             src={getAssetPath(images[0])}
             fill
+            loading="lazy"
             alt={`Banner`}
             className="object-cover transition-transform duration-300 hover:scale-105 rounded-xl"
           />
@@ -76,6 +77,7 @@ export function BannerSection({
                   <Image
                     src={getAssetPath(image)}
                     fill
+                    loading="lazy"
                     alt={`Banner ${idx + 1}`}
                     className="object-cover transition-transform duration-300 hover:scale-105 rounded-xl"
                   />

@@ -11,12 +11,6 @@ const sliderSlides = [
     image: "/images/slider-banner.png",
     imageMb: "/images/slider-banner-mobile.png",
   },
-  {
-    title: "XIAOMI TV max Series 22222",
-    subtitle: "View to the max",
-    image: "/images/slider-banner.png",
-    imageMb: "/images/slider-banner-mobile.png",
-  },
 ];
 
 const TopSellingProducts: Product[] = [

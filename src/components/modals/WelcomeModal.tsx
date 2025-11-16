@@ -11,7 +11,7 @@ export default function WelcomeModal() {
     // Show modal after 2 seconds
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -26,8 +26,6 @@ export default function WelcomeModal() {
       buttonText="SEE MORE"
       onButtonClick={() => {
         setIsOpen(false);
-        // Add your navigation logic here
-        console.log("Navigate to product page");
       }}
     />
   );

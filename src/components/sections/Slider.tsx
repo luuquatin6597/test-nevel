@@ -87,8 +87,7 @@ export default function Slider({
             width={1600}
             height={642}
             className="w-full h-auto object-cover animate-fade-in-image hidden md:block"
-            loading={currentSlide === currentSlide ? "eager" : "lazy"}
-            priority={currentSlide === 0}
+            priority
           />
           {currentItem.imageMb && (
             <Image
@@ -98,8 +97,7 @@ export default function Slider({
               width={600}
               height={642}
               className="w-full h-auto object-cover animate-fade-in-image md:hidden"
-              loading={currentSlide === currentSlide ? "eager" : "lazy"}
-              priority={currentSlide === 0}
+              priority
             />
           )}
         </div>

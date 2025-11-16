@@ -12,6 +12,7 @@ export default function ProductItem({ product }: { product: Product }) {
           alt={`Product`}
           width={180}
           height={245}
+          loading="lazy"
           className="object-cover max-w-[103px] lg:max-w-[180px] max-h-[140px] lg:max-h-[245px]"
         />
       </div>
