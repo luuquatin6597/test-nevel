@@ -32,7 +32,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="py-40">
+    <footer className="py-40 border-t border-bg-neutral-subdued">
       <div className="container">
         {/* Links Section */}
         <div className="grid grid-cols-12 gap-24 mb-20 lg:mb-40">
