@@ -54,14 +54,14 @@ jobs:
           # Check if standalone output exists
           if [ -d ".next/standalone" ]; then
             echo "Using standalone output"
-            mkdir -p out
+            mkdir -p out/_next
             cp -r .next/standalone/* out/
             cp -r .next/static out/_next/static
             cp -r public/* out/
           # Check if server app output exists  
           elif [ -d ".next/server/pages" ]; then
             echo "Copying from .next/server/pages"
-            mkdir -p out
+            mkdir -p out/_next
             cp -r .next/server/pages/* out/
             cp -r .next/static out/_next/static
             cp -r public/* out/
