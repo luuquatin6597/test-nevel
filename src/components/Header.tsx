@@ -10,9 +10,9 @@ import { getAssetPath } from "@/lib/utils";
 
 const menuItems = [
   { href: "/", label: "HOME" },
-  { href: "/product", label: "PRODUCT" },
-  { href: "/contact", label: "CONTACT" },
-  { href: "/price", label: "PRICE" },
+  { href: "#", label: "PRODUCT" },
+  { href: "#", label: "CONTACT" },
+  { href: "#", label: "PRICE" },
 ];
 
 export default function Header() {
