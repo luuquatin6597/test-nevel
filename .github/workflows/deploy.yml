@@ -46,34 +46,12 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: Export static files
+      - name: Verify build output
         run: |
-          echo "Looking for static export..."
-          ls -la .next/
-
-          # Check if standalone output exists
-          if [ -d ".next/standalone" ]; then
-            echo "Using standalone output"
-            mkdir -p out/_next
-            cp -r .next/standalone/* out/
-            cp -r .next/static out/_next/static
-            cp -r public/* out/
-          # Check if server app output exists  
-          elif [ -d ".next/server/pages" ]; then
-            echo "Copying from .next/server/pages"
-            mkdir -p out/_next
-            cp -r .next/server/pages/* out/
-            cp -r .next/static out/_next/static
-            cp -r public/* out/
-          else
-            echo "ERROR: Cannot find static export output!"
-            echo "Contents of .next/server:"
-            ls -la .next/server/ || true
-            exit 1
-          fi
-
-          echo "Final out directory:"
-          ls -la out/
+          echo "Checking out directory..."
+          ls -la out/ || echo "out directory not found!"
+          echo "Checking for images..."
+          ls -la out/images/ | head -10 || echo "images directory not found!"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
