@@ -66,12 +66,25 @@ jobs:
             echo "✗ out directory NOT FOUND!"
             echo "=== Trying to create out from .next/server/app ==="
             if [ -d ".next/server/app" ]; then
-              mkdir -p out
-              cp -r .next/server/app/* out/
+              echo "Creating out directory structure..."
+              mkdir -p out/_next
+              
+              # Copy HTML files from server/app
+              echo "Copying HTML files..."
+              find .next/server/app -name "*.html" -exec cp {} out/ \;
+              
+              # Copy static assets
+              echo "Copying _next/static..."
               cp -r .next/static out/_next/
+              
+              # Copy public files
+              echo "Copying public files..."
               cp -r public/* out/
+              
               echo "✓ Created out directory manually"
+              echo "=== Final out structure ==="
               ls -la out/
+              ls -la out/_next/ || true
             else
               echo "✗ .next/server/app also not found"
               exit 1
