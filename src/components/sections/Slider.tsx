@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import IconLeft from "../icons/IconLeft";
 import IconRight from "../icons/IconRight";
+import { getAssetPath } from "@/lib/utils";
 
 interface SlideItem {
   id?: number;
@@ -81,7 +82,7 @@ export default function Slider({
         <div className="flex w-full relative">
           <Image
             key={`image-${currentSlide}`}
-            src={currentItem.image}
+            src={getAssetPath(currentItem.image)}
             alt={`${currentItem.title}`}
             width={1600}
             height={642}
@@ -92,7 +93,7 @@ export default function Slider({
           {currentItem.imageMb && (
             <Image
               key={`image-mb-${currentSlide}`}
-              src={currentItem.imageMb}
+              src={getAssetPath(currentItem.imageMb)}
               alt={`${currentItem.title} Mobile`}
               width={600}
               height={642}

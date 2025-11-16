@@ -1,3 +1,4 @@
+import { getAssetPath } from "@/lib/utils";
 import Title from "../ui/Title";
 import Image from "next/image";
 
@@ -27,7 +28,7 @@ export function BannerSection({
         // Small type: chỉ hiển thị banner đầu tiên
         <div className="overflow-hidden rounded-lg flex-1 relative min-h-60">
           <Image
-            src={images[0]}
+            src={getAssetPath(images[0])}
             fill
             alt={`Banner`}
             className="object-cover transition-transform duration-300 hover:scale-105 rounded-xl"
@@ -41,7 +42,7 @@ export function BannerSection({
             className="overflow-hidden rounded-lg flex-1 relative min-h-60"
           >
             <Image
-              src={image}
+              src={getAssetPath(image)}
               fill
               alt={`Banner ${index + 1}`}
               className="object-cover transition-transform duration-300 hover:scale-105 rounded-xl"

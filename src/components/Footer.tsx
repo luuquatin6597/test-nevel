@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getAssetPath } from "@/lib/utils";
 
 export default function Footer() {
   const footerLinks = {
@@ -112,7 +113,7 @@ export default function Footer() {
               </a>
               <button className="mt-24">
                 <Image
-                  src="/images/install-app.png"
+                  src={getAssetPath("/images/install-app.png")}
                   alt="Phone"
                   width={151.4}
                   height={44}
@@ -125,7 +126,7 @@ export default function Footer() {
         {/* Warranty Section */}
         <div className="flex items-center flex-col lg:flex-row gap-12 lg:gap-20 mb-20 lg:mb-40">
           <Image
-            src="/images/footer-secure.png"
+            src={getAssetPath("/images/footer-secure.png")}
             alt="Secure"
             width={131}
             height={30}
