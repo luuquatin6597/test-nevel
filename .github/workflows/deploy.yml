@@ -43,6 +43,15 @@ jobs:
 
       - name: Build with Next.js
         run: pnpm build
+        env:
+          NODE_ENV: production
+
+      - name: Debug - List files
+        run: |
+          echo "Listing root directory:"
+          ls -la
+          echo "Checking if out directory exists:"
+          ls -la out/ || echo "out directory does not exist"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
