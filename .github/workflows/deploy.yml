@@ -43,11 +43,16 @@ jobs:
 
       - name: Build with Next.js
         run: NODE_ENV=production pnpm build
+        env:
+          NEXT_DISABLE_TURBOPACK: "1"
 
       - name: Verify build output
         run: |
           echo "=== Listing root directory ==="
           ls -la
+          echo ""
+          echo "=== Contents of .next/server ==="
+          ls -la .next/server/
           echo ""
           echo "=== Checking if out directory exists ==="
           if [ -d "out" ]; then
@@ -59,9 +64,18 @@ jobs:
             ls -la out/images/ | head -10 || echo "images directory not found!"
           else
             echo "✗ out directory NOT FOUND!"
-            echo "=== Contents of .next directory ==="
-            ls -la .next/ || echo ".next not found"
-            exit 1
+            echo "=== Trying to create out from .next/server/app ==="
+            if [ -d ".next/server/app" ]; then
+              mkdir -p out
+              cp -r .next/server/app/* out/
+              cp -r .next/static out/_next/
+              cp -r public/* out/
+              echo "✓ Created out directory manually"
+              ls -la out/
+            else
+              echo "✗ .next/server/app also not found"
+              exit 1
+            fi
           fi
 
       - name: Upload artifact
